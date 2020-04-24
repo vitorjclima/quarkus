@@ -15,4 +15,9 @@ public class CustomerServiceImpl implements CustomerService {
   public List<CustomerVO> getAll() {
     return CustomerMapper.daoToVo(Customer.listAll());
   }
+
+  @Override
+  public void create(CustomerVO vo) {
+    CustomerMapper.voToDao(vo).persistAndFlush();
+  }
 }

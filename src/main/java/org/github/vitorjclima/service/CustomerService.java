@@ -12,4 +12,11 @@ public interface CustomerService {
    * @return The customers.
    */
   List<CustomerVO> getAll();
+
+  /**
+   * Creates the customer.
+   *
+   * @param vo The customer VO.
+   */
+  void create(CustomerVO vo);
 }

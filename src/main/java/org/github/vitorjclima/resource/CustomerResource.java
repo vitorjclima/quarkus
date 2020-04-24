@@ -4,10 +4,7 @@ import org.github.vitorjclima.model.vo.CustomerVO;
 import org.github.vitorjclima.service.CustomerService;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 
 import java.util.List;
 
@@ -24,5 +21,10 @@ public class CustomerResource {
   @GET
   public List<CustomerVO> getAll() {
     return service.getAll();
+  }
+
+  @POST
+  public void create(CustomerVO vo){
+    service.create(vo);
   }
 }
