@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface CustomerService {
 
-  /**
-   * Retrieves the customers.
-   *
-   * @return The customers.
-   */
-  List<CustomerVO> getAll();
+    /**
+     * Retrieves the customers.
+     *
+     * @return The customers.
+     */
+    List<CustomerVO> getAll();
 
-  /**
-   * Creates the customer.
-   *
-   * @param vo The customer VO.
-   */
-  void create(CustomerVO vo);
+    /**
+     * Creates the customer.
+     *
+     * @param vo The customer VO.
+     */
+    void create(CustomerVO vo);
 }

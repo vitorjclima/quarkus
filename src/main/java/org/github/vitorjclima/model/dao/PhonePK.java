@@ -8,15 +8,15 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-import static lombok.AccessLevel.PRIVATE;
+import static lombok.AccessLevel.PROTECTED;
 
 @Data
 @Builder
 @Embeddable
-@NoArgsConstructor(access = PRIVATE)
+@NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor
 public class PhonePK implements Serializable {
-  private Integer country;
-  private Integer area;
-  private Integer number;
+    private Integer country;
+    private Integer area;
+    private Integer number;
 }

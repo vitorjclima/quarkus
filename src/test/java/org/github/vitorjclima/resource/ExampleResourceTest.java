@@ -10,8 +10,8 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class ExampleResourceTest {
 
-  @Test
-  public void testHelloEndpoint() {
-    given().when().get("/hello").then().statusCode(SC_OK).body(is("hello"));
-  }
+    @Test
+    public void testHelloEndpoint() {
+        given().when().get("/hello").then().statusCode(SC_OK).body(is("hello"));
+    }
 }

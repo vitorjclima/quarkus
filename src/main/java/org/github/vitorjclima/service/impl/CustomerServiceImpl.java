@@ -11,13 +11,13 @@ import java.util.List;
 @Singleton
 public class CustomerServiceImpl implements CustomerService {
 
-  @Override
-  public List<CustomerVO> getAll() {
-    return CustomerMapper.daoToVo(Customer.listAll());
-  }
+    @Override
+    public List<CustomerVO> getAll() {
+        return CustomerMapper.daoToVo(Customer.listAll());
+    }
 
-  @Override
-  public void create(CustomerVO vo) {
-    CustomerMapper.voToDao(vo).persistAndFlush();
-  }
+    @Override
+    public void create(CustomerVO vo) {
+        CustomerMapper.voToDao(vo).persistAndFlush();
+    }
 }

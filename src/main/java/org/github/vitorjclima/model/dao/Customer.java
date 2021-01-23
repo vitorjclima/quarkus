@@ -5,28 +5,29 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.List;
 
-import static lombok.AccessLevel.PRIVATE;
+import static javax.persistence.CascadeType.ALL;
+import static lombok.AccessLevel.PROTECTED;
 
-@Data
+@Getter
+@Setter
 @Builder
 @Entity
-@NoArgsConstructor
+@NoArgsConstructor(access = PROTECTED)
 @AllArgsConstructor
 public class Customer extends PanacheEntity {
 
-  private String name;
-  private String document;
-  private Date birthDate;
-  private String reference;
-  @CreationTimestamp private Date createDate;
-  @UpdateTimestamp private Date updateDate;
+    private String name;
+    private String document;
+    private Date birthDate;
+    private String reference;
+    @CreationTimestamp private Date createDate;
+    @UpdateTimestamp private Date updateDate;
 
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Phone> phones;
+    @OneToMany(cascade = ALL, orphanRemoval = true)
+    private List<Phone> phones;
 }
